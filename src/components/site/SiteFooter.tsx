@@ -1,4 +1,5 @@
 import { Facebook, Linkedin } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 
 export function SiteFooter() {
@@ -9,18 +10,16 @@ export function SiteFooter() {
 
         <nav className="flex flex-wrap justify-center gap-6">
           {[
-            { label: "About", href: "#about" },
-            { label: "What's at Stake", href: "#stake" },
-            { label: "Latest News", href: "#news" },
-            { label: "Sign Up", href: "#signup" },
+            { label: "Contact Us", href: "/contact" },
+            { label: "Privacy Policy", href: "/privacy-policy" },
           ].map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="font-display text-sm font-semibold text-secondary-foreground hover:text-accent"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 

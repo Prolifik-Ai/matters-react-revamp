@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import stakeCommunities from "@/assets/stake-communities.jpg";
 import stakeFunding from "@/assets/stake-funding.jpg";
 import stakeHospitals from "@/assets/stake-hospitals.jpg";
@@ -7,21 +8,21 @@ const items = [
   {
     title: "Lost Health Care Funding",
     body: "As the healthcare landscape is changing, 340B is at risk. The total direct and indirect funding hospitals will lose if the discounts are reduced is unknown.",
-    href: "https://340bmatters.org/lost-funding/",
+    href: "/lost-funding",
     image: stakeFunding,
     alt: "Pharmacist counting pills beside prescription bottles and a calculator",
   },
   {
     title: "Fewer Hospitals",
     body: "Dozens of hospitals and clinics will close without the 340B drug discount program, especially in rural areas. Safety-net hospitals will have to reduce services.",
-    href: "https://340bmatters.org/fewer-hospitals/",
+    href: "/fewer-hospitals",
     image: stakeHospitals,
     alt: "Rural community health clinic building",
   },
   {
     title: "Impacted Communities",
     body: "Virtually all communities in the U.S. benefit from providers that participate in 340B, from big-city safety-net hospitals to small-town clinics.",
-    href: "https://340bmatters.org/impacted-communities/",
+    href: "/impacted-communities",
     image: stakeCommunities,
     alt: "Community members gathered outside a neighborhood clinic",
   },
@@ -53,12 +54,12 @@ export function WhatsAtStake() {
               <div className="p-8">
                 <h3 className="text-xl text-teal-deep">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="mt-6 inline-flex items-center gap-2 font-display text-sm font-bold text-accent hover:gap-3"
                 >
                   Learn More <ArrowRight className="size-4" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}

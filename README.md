@@ -1,8 +1,8 @@
 # 340B Matters React Launch
 
-the following website is hosted in wordpress. we need to convert this to a react webite. 
+the following website is hosted in wordpress. we need to convert this to a react webite.
 
-review the site, all its pages etc and then create a new landing page for this site. only create the landing page for now. other pages will be created later 
+review the site, all its pages etc and then create a new landing page for this site. only create the landing page for now. other pages will be created later
 
 https://340bmatters.org/
 

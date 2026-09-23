@@ -1,29 +1,9 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroDoctor from "@/assets/hero-doctor.jpg";
-import stakeCommunities from "@/assets/stake-communities.jpg";
-import stakeHospitals from "@/assets/stake-hospitals.jpg";
+import { Link } from "@tanstack/react-router";
+import { blogPosts } from "@/data/blogPosts";
 
-const slides = [
-  {
-    title: "RFK Jr. Bends the Knee to Big Pharma. Trump Country Will Pay the Price",
-    href: "https://340bmatters.org/rfk-jr-bends-the-knee-to-big-pharma-trump-country-will-pay-the-price",
-    image: heroDoctor,
-    alt: "Clinician holding a stethoscope in a hospital corridor",
-  },
-  {
-    title: "Big Pharma's Newest Target: The Community Health Center Down the Road",
-    href: "https://340bmatters.org/big-pharmas-newest-target-the-community-health-center-down-the-road",
-    image: stakeHospitals,
-    alt: "Small rural community health clinic beside a two-lane road",
-  },
-  {
-    title: "Healthcare Safety Net Needs Champions Like Arkansas AG Tim Griffin",
-    href: "https://340bmatters.org/healthcare-safety-net-needs-champions-like-arkansas-ag-tim-griffin",
-    image: stakeCommunities,
-    alt: "Neighbors talking with a nurse outside a community clinic",
-  },
-];
+const slides = blogPosts.slice(0, 3);
 
 export function HeroCarousel() {
   const [index, setIndex] = useState(0);
@@ -41,7 +21,7 @@ export function HeroCarousel() {
         <div className="relative aspect-4/5 sm:aspect-16/9">
           {slides.map((slide, i) => (
             <div
-              key={slide.title}
+              key={slide.slug}
               className={`absolute inset-0 transition-opacity duration-700 ${
                 i === index ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
@@ -62,12 +42,13 @@ export function HeroCarousel() {
                   <h1 className="mt-4 font-display text-3xl leading-tight font-semibold text-primary-foreground sm:text-5xl">
                     {slide.title}
                   </h1>
-                  <a
-                    href={slide.href}
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: slide.slug }}
                     className="mt-8 inline-flex items-center rounded-full bg-accent px-8 py-3.5 font-display text-sm font-bold tracking-[0.14em] text-accent-foreground uppercase transition-transform hover:scale-[1.03]"
                   >
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -94,7 +75,7 @@ export function HeroCarousel() {
         <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2">
           {slides.map((slide, i) => (
             <button
-              key={slide.title}
+              key={slide.slug}
               type="button"
               onClick={() => setIndex(i)}
               aria-label={`Show story ${i + 1}`}

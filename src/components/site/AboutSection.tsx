@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { HeartPulse, ShieldCheck, Users } from "lucide-react";
 
 const pillars = [
@@ -17,17 +18,17 @@ export function AboutSection() {
               About 340B Matters
             </h2>
             <p className="mt-6 text-base leading-relaxed text-primary-foreground/85">
-              340B Matters advocates for patients over profits. We seek to protect the
-              lifesaving 340B Drug Discount Program, so this critical legislation can keep
-              doing what it was intended to do: ensuring vulnerable patients and the
-              hospitals and clinics that serve them can afford the medicine they need.
+              340B Matters advocates for patients over profits. We seek to protect the lifesaving
+              340B Drug Discount Program, so this critical legislation can keep doing what it was
+              intended to do: ensuring vulnerable patients and the hospitals and clinics that serve
+              them can afford the medicine they need.
             </p>
-            <a
-              href="https://340bmatters.org/who-are-we/"
+            <Link
+              to="/who-are-we"
               className="mt-8 inline-flex items-center rounded-full bg-accent px-8 py-3.5 font-display text-sm font-bold tracking-[0.14em] text-accent-foreground uppercase transition-transform hover:scale-[1.03]"
             >
               Learn More
-            </a>
+            </Link>
           </div>
 
           <ul className="grid gap-4">

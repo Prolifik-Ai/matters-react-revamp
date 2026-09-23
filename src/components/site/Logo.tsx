@@ -13,7 +13,9 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
       <span className="flex flex-col leading-none">
         <span className="font-display text-2xl font-bold tracking-tight">
           <span className={inverted ? "text-primary-foreground" : "text-primary"}>340B</span>
-          <span className={inverted ? "text-primary-foreground/80" : "text-teal-deep"}>matters.</span>
+          <span className={inverted ? "text-primary-foreground/80" : "text-teal-deep"}>
+            matters.
+          </span>
         </span>
         <span
           className={`mt-1 font-display text-[0.55rem] font-bold uppercase tracking-[0.22em] ${

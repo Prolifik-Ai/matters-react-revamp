@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as FewerHospitalsRouteImport } from './routes/fewer-hospitals'
+import { Route as ImpactedCommunitiesRouteImport } from './routes/impacted-communities'
+import { Route as LostFundingRouteImport } from './routes/lost-funding'
+import { Route as OurPrinciplesRouteImport } from './routes/our-principles'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as WhoAreWeRouteImport } from './routes/who-are-we'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FewerHospitalsRoute = FewerHospitalsRouteImport.update({
+  id: '/fewer-hospitals',
+  path: '/fewer-hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactedCommunitiesRoute = ImpactedCommunitiesRouteImport.update({
+  id: '/impacted-communities',
+  path: '/impacted-communities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LostFundingRoute = LostFundingRouteImport.update({
+  id: '/lost-funding',
+  path: '/lost-funding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurPrinciplesRoute = OurPrinciplesRouteImport.update({
+  id: '/our-principles',
+  path: '/our-principles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoAreWeRoute = WhoAreWeRouteImport.update({
+  id: '/who-are-we',
+  path: '/who-are-we',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/fewer-hospitals': typeof FewerHospitalsRoute
+  '/impacted-communities': typeof ImpactedCommunitiesRoute
+  '/lost-funding': typeof LostFundingRoute
+  '/our-principles': typeof OurPrinciplesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/who-are-we': typeof WhoAreWeRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/fewer-hospitals': typeof FewerHospitalsRoute
+  '/impacted-communities': typeof ImpactedCommunitiesRoute
+  '/lost-funding': typeof LostFundingRoute
+  '/our-principles': typeof OurPrinciplesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/who-are-we': typeof WhoAreWeRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/fewer-hospitals': typeof FewerHospitalsRoute
+  '/impacted-communities': typeof ImpactedCommunitiesRoute
+  '/lost-funding': typeof LostFundingRoute
+  '/our-principles': typeof OurPrinciplesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/who-are-we': typeof WhoAreWeRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/faqs'
+    | '/fewer-hospitals'
+    | '/impacted-communities'
+    | '/lost-funding'
+    | '/our-principles'
+    | '/privacy-policy'
+    | '/who-are-we'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/faqs'
+    | '/fewer-hospitals'
+    | '/impacted-communities'
+    | '/lost-funding'
+    | '/our-principles'
+    | '/privacy-policy'
+    | '/who-are-we'
+    | '/blog/$slug'
+    | '/blog'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/faqs'
+    | '/fewer-hospitals'
+    | '/impacted-communities'
+    | '/lost-funding'
+    | '/our-principles'
+    | '/privacy-policy'
+    | '/who-are-we'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  FaqsRoute: typeof FaqsRoute
+  FewerHospitalsRoute: typeof FewerHospitalsRoute
+  ImpactedCommunitiesRoute: typeof ImpactedCommunitiesRoute
+  LostFundingRoute: typeof LostFundingRoute
+  OurPrinciplesRoute: typeof OurPrinciplesRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  WhoAreWeRoute: typeof WhoAreWeRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +182,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fewer-hospitals': {
+      id: '/fewer-hospitals'
+      path: '/fewer-hospitals'
+      fullPath: '/fewer-hospitals'
+      preLoaderRoute: typeof FewerHospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impacted-communities': {
+      id: '/impacted-communities'
+      path: '/impacted-communities'
+      fullPath: '/impacted-communities'
+      preLoaderRoute: typeof ImpactedCommunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lost-funding': {
+      id: '/lost-funding'
+      path: '/lost-funding'
+      fullPath: '/lost-funding'
+      preLoaderRoute: typeof LostFundingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-principles': {
+      id: '/our-principles'
+      path: '/our-principles'
+      fullPath: '/our-principles'
+      preLoaderRoute: typeof OurPrinciplesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-are-we': {
+      id: '/who-are-we'
+      path: '/who-are-we'
+      fullPath: '/who-are-we'
+      preLoaderRoute: typeof WhoAreWeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  FaqsRoute: FaqsRoute,
+  FewerHospitalsRoute: FewerHospitalsRoute,
+  ImpactedCommunitiesRoute: ImpactedCommunitiesRoute,
+  LostFundingRoute: LostFundingRoute,
+  OurPrinciplesRoute: OurPrinciplesRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  WhoAreWeRoute: WhoAreWeRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
