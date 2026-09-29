@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Build for Azure Static Web Apps: emits static assets to .output/public and an
+  // Azure Functions app to .output/server, plus a generated staticwebapp.config.json.
+  // Ignored inside Lovable's own build environment, which pins its own preset.
+  nitro: { preset: "azure_swa" },
 });
